@@ -1,0 +1,281 @@
+// 810803090 Hossein Moradi CA01
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <sstream>
+using namespace std;
+
+class Task
+{
+private:
+    int id;
+    string title;
+    bool done;
+    vector<int> dependencies;
+
+public:
+    Task(int id,string title);
+    void AddDependency(int dep_id);
+    void MarkDone();
+    int getId();
+    string getName();
+    bool getDone();
+    void setDeps(vector<int> deps);
+    vector<int> getDeps();
+};
+class TodoList
+{
+private:
+    string name;
+    vector<Task> tasks;
+    Task* findTask(int id);
+
+public:
+    TodoList(string name);
+    void addTask(int id, string title);
+    void addTaskWithDeps(int id, string title,
+    vector<int> deps);
+    void markDone(int id);
+    void printAll();
+    void printPending();
+    void printReady();
+    void removeTask(int id);
+    bool isPrereq(Task tasq);
+    void printStatus(int id);
+    bool isDepsdone(vector<int> deps);
+};
+bool compareTaskbyid(Task& a, Task& b){
+    return a.getId() < b.getId();
+}
+TodoList::TodoList(string name) : name(name)
+{
+    cout << "List '" << name << "' created.\n";
+}
+void TodoList::addTask(int id, string title){
+    Task task(id,title);
+    for(int i = 0;i<tasks.size();i++){
+        if(tasks[i].getId() == id){
+            cout << "Error: task " << id << " already exists.\n";
+            return;
+        }
+    }
+    tasks.push_back(task);
+    cout << "Task " << id << " added.\n";
+}
+void TodoList::addTaskWithDeps(int id,string title,vector<int> deps){
+    int s = tasks.size();
+    for(int i = 0;i<s;i++){
+        if(tasks[i].getId() == id){
+            cout << "Error: task " << id << " already exists.\n";
+            return;
+        }
+    }
+    Task tasq(id,title);
+    sort(deps.begin(),deps.end());
+    for(int i = 0;i<deps.size();i++){
+        if(!findTask(deps[i])){
+            cout << "Error: dependency " << deps[i] << " not found.\n";
+            return;
+        }
+        tasq.AddDependency(deps[i]);
+    }
+    tasks.push_back(tasq);
+    
+    cout << "Task " << id << " added with " << deps.size() << " deps.\n";
+}
+void TodoList::markDone(int id){
+    for(int i = 0;i<tasks.size();i++){
+        if(tasks[i].getId() == id){
+            if(isDepsdone(tasks[i].getDeps())){
+                tasks[i].MarkDone();
+                cout << "Task " << id << " marked as done.\n";
+                return;
+            }
+            else{
+                cout << "Cannot complete task "<<id<<": prerequisites not met.\n";
+                return;
+            }
+        }
+    }
+    cout << "Error: task "<<id<<" not found.\n";
+}
+void TodoList::printAll(){
+    int s = tasks.size();
+    sort(tasks.begin(),tasks.end(),compareTaskbyid);
+    if(s > 0){
+    for(int i = 0;i<s;i++){
+        if(tasks[i].getDone()) cout << "[done]    " << tasks[i].getId() << ": " << tasks[i].getName();
+        else cout << "[pending] " << tasks[i].getId() << ": " << tasks[i].getName();
+        cout << endl;
+    }}
+}
+void TodoList::printPending(){
+    int s = tasks.size();
+    vector<Task> undone;
+    for(int i = 0;i<s;i++)
+        if(!tasks[i].getDone()) undone.push_back(tasks[i]);
+    s = undone.size();
+    if(s>0){
+    sort(undone.begin(),undone.end(),compareTaskbyid);
+    cout<< "Pending tasks: " ;
+    for(int i = 0;i<s-1;i++)
+        cout <<undone[i].getId() << " (" << undone[i].getName() << "), ";
+    cout << undone[s-1].getId() << " (" << undone[s-1].getName() << ")\n";}
+}
+void TodoList::printReady(){
+    vector<Task> tasks_;
+    int s = tasks.size();
+    sort(tasks.begin(),tasks.end(),compareTaskbyid);
+    for(int i = 0;i<s;i++){
+        if(isDepsdone(tasks[i].getDeps()) and tasks[i].getDone() == false) tasks_.push_back(tasks[i]);
+    }
+    s = tasks_.size();
+    if(s>0){
+        cout << "Ready tasks: ";
+        for(int i = 0;i<s-1;i++)
+            cout << tasks_[i].getId() << " ";
+        cout << tasks_[s-1].getId() << endl;}
+}
+void TodoList::removeTask(int id){
+    for(int i = 0;i<tasks.size();i++){
+        if(id == tasks[i].getId()){
+            if(!isPrereq(tasks[i])){ tasks.erase(tasks.begin() + i);
+                cout << "Task " << id << " removed.\n";return;}
+            else{ cout << "Cannot remove task " << id <<  ": other tasks depend on it.\n";return;}
+        }
+    }
+    cout << "Error: task "<< id << " not found.\n";
+}
+bool TodoList::isPrereq(Task tasq){
+    int s = tasks.size(),id = tasq.getId();
+    vector<int> depends;
+    for(int i = 0;i<s;i++){
+        if(tasks[i].getId() == id)continue;
+        depends = tasks[i].getDeps();
+        for(int j = 0;j<depends.size();j++)
+            if(id == depends[j]) return true;
+    }
+    return false;
+}
+void TodoList::printStatus(int id){
+    Task tasq(-1,"temp");
+    string status = "pending";
+    int index = 0;
+    for(int i = 0;i<tasks.size();i++){
+        if(tasks[i].getId() == id){
+            tasq = tasks[i];
+            index++;
+        }
+    }
+    if(index == 0){
+        cout << "Error: task " << id << " not found.\n";
+        return;
+    }
+    vector<int> deps = tasq.getDeps();
+    cout << "Task " << tasq.getId() << ": " << tasq.getName() << endl;
+    if(tasq.getDone()) status = "done";
+    cout <<"Status: " << status << endl;
+    if(deps.size() != 0){
+        cout << "Dependencies: ";
+        for(int i = 0;i<deps.size()-1;i++){
+            cout << deps[i] << " (" << findTask(deps[i])->getName() << "), ";
+        }
+        cout << deps[deps.size()-1] << " (" << findTask(deps[deps.size()-1])->getName() <<")\n";
+    }
+}
+Task* TodoList::findTask(int id){
+    for(int i = 0;i<tasks.size();i++){
+        if(id == tasks[i].getId()) return &tasks[i];
+    }
+    return nullptr;
+}
+bool TodoList::isDepsdone(vector<int> deps){
+    int count=0;
+    bool temp;
+    for(int i = 0;i<deps.size();i++)
+        if (findTask(deps[i])->getDone()) count++;
+    if(count == deps.size()) return true;
+    return false;
+}
+Task::Task(int id_, string title_) : id(id_), title(title_){done = false;}
+void Task::AddDependency(int dep_id)
+{
+    dependencies.push_back(dep_id);
+}
+void Task::MarkDone()
+{done = true;}
+
+int Task::getId(){
+    return id;
+}
+string Task::getName(){return title;}
+bool Task::getDone(){return done;}
+void Task::setDeps(vector<int> deps){dependencies = deps;}
+vector<int> Task::getDeps(){return dependencies;}
+
+bool doJob(){
+    string command,name ,title;
+    vector<int> deps_id;
+    int id,idd;
+    cin >> name;
+    TodoList tdl(name);
+    while(cin >> command){
+        if(command == "NEW_LIST")
+            return doJob();
+        else if(command == "ADD"){
+            cin >> id >> title;
+            tdl.addTask(id, title);
+        }
+            
+        else if(command == "ADD_DEP"){
+            cin >> id >> title;
+            deps_id.clear();
+            name = "";
+            if(getline(cin,name)){
+            stringstream ss(name);
+            while(ss >> idd)
+                if(find(deps_id.begin(),deps_id.end(),idd) == deps_id.end())
+                    deps_id.push_back(idd);
+            }
+            if(deps_id.size() > 0)
+                tdl.addTaskWithDeps(id,title,deps_id);
+        }
+                
+        else if(command == "DONE"){
+            cin >> id;
+            tdl.markDone(id);
+        }
+        else if(command == "STATUS"){
+            cin >> id;
+            tdl.printStatus(id);
+        }
+        else if(command == "PRINT_ALL"){
+            tdl.printAll();
+        }
+        else if(command == "PENDING"){
+            tdl.printPending();
+        }
+        else if(command == "READY"){
+            tdl.printReady();
+        }
+        else if(command == "REMOVE"){
+            cin >> id;
+            tdl.removeTask(id);
+        }
+        else if(command == "EXIT"){
+            return false;
+            }
+    }
+    return true;
+}
+int main(){
+    string command;
+    bool flag = true;
+    while(cin >> command){
+        if(command == "NEW_LIST" and flag )
+            flag = doJob();
+        else if(command == "EXIT") flag = false;
+    }
+    return 0;
+}

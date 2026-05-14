@@ -1,0 +1,172 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+struct  WordCount
+{
+    string word;
+    int count;
+};
+
+bool isPunctuation(char c);
+string sanitizeWord(string word);
+bool isStopWord(string word, vector<string> stopWords);
+vector<WordCount> updateWordCount(vector<WordCount> frequencies, string word);
+bool Compare(vector<WordCount> frequencies,int idx);
+vector<WordCount> sortWordCounts(vector<WordCount> frequencies);
+void handy_swap(vector<WordCount> &frequencies,int index);
+
+int main(){
+    int idx=0,index=0;
+    string text,word;
+    WordCount wo;
+    vector<WordCount> wlist,ans;
+    vector<string> wlist2;
+    while (cin >> text) {
+        if (text == "###END###") {
+            break;
+        }
+        wo.word = text;
+        wo.count = 0;
+        wlist.push_back(wo);
+        index++;
+    }
+    while (cin >> word) {
+        word = sanitizeWord(word);
+        if(word != "")
+            wlist2.push_back(word);
+    }
+    
+    for(int i = 0;i<index;i++){
+        wo = wlist[i];
+        word = wo.word;
+        word = sanitizeWord(word);
+        wo.word = word;
+        if(word != ""){
+            if(!isStopWord(word,wlist2)){
+                ans.push_back(wo);
+                idx++;
+            }
+        }
+    }
+
+    for(int j = 0;j<idx;j++)
+        ans = updateWordCount(ans,ans[j].word);
+    ans = sortWordCounts(ans);
+    cout << "Total words original: " << index << endl;
+    cout << "Total words after filter: " << idx << endl;
+    cout << "Word Frequencies:" << endl;
+    int n = ans.size();
+    for(int i = 0;i<n;i++){
+        cout << ans[i].word << ": " << ans[i].count << endl;
+    }
+}
+
+
+
+
+
+
+bool isPunctuation(char c){
+    string P = ".,!?\"';:()[]{}<>-";
+    for(int i = 0;i<P.size();i++){
+        if(c == P[i]) return true;
+    }
+    return false;
+}
+string sanitizeWord(string word){
+    int s = word.size();
+    char c;
+    int countl=0,countr = 0;
+    for(int i = 0;i<s;i++){
+        c = word[i];
+        if(c>='A' and c<='Z') c += 32;
+        word[i] = c;
+    }
+    
+    string new_word = "";
+    for(int i = 0;i<s;i++){
+        if(i == 0 and isPunctuation(word[i])){
+            countl++;
+            continue;
+        }
+        if(countl>0 and isPunctuation(word[i])) countl++;
+        if(!isPunctuation(word[i])) break;
+    }
+    for(int i = s-1;i>=0;i--){
+        if(i == s-1 and isPunctuation(word[i])){
+            countr++;
+            continue;
+        }
+        if(countr>0 and isPunctuation(word[i])) countr++;
+        if(!isPunctuation(word[i])) break;
+    }
+    for(int i = countl;i<s-countr;i++) new_word += word[i];
+
+    s = new_word.size();
+    int c0=0,c1=0;
+    for(int i = 0;i<s;i++){
+        if(new_word[i] >= '0' and new_word[i]<='9') c0++;
+        else if(new_word[i] == '.') c1++;
+    }
+    if(c1+c0 == s and c1 < 2) return "";
+    return new_word;
+}
+bool isStopWord(string word,vector<string> stopWords){
+    int s = stopWords.size();
+    for(int i = 0;i<s;i++)
+        if(word == stopWords[i]) return true;
+    return false;
+}
+vector<WordCount> updateWordCount(vector<WordCount> frequencies, string word){
+    int count;
+    int s = frequencies.size();
+    WordCount w;
+    for(int i = 0;i<s;i++){
+        if(word == frequencies[i].word){
+            frequencies[i].count++;
+        }
+    }
+    return frequencies;
+    
+}
+
+void handy_swap(vector<WordCount> &frequencies,int index){
+	WordCount temp;
+	temp = frequencies[index];
+	frequencies[index] = frequencies[index+1];
+	frequencies[index+1] = temp;
+}
+
+bool Compare(vector<WordCount> frequencies,int idx){
+    if (frequencies[idx].count != frequencies[idx+1].count) {
+        return frequencies[idx].count < frequencies[idx+1].count;
+    }
+    return frequencies[idx].word > frequencies[idx+1].word;
+}
+
+vector<WordCount> sortWordCounts(vector<WordCount> frequencies){
+    vector<WordCount> result;
+    int s = frequencies.size();
+	for(int i = 0;i<s-1;i++){
+		// int key = frequencies[i].count;
+		if (Compare(frequencies,i)) {for(int j = i; j >= 0; j--){
+			int g = j;
+			while(Compare(frequencies,g) and g >=0){
+				handy_swap(frequencies,g);
+				g--;
+			}
+		}}
+	}
+    int count = 0;
+    for(int i = 0;i<s;i++){
+        if(frequencies[i].count > 0 and frequencies[i].word != ""){
+            if(i>0)
+                if(frequencies[i].word == frequencies[i-1].word) continue;
+            result.push_back(frequencies[i]);
+        }
+    }
+
+    return result;
+}
