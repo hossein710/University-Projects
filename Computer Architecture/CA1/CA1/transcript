@@ -1,0 +1,83 @@
+# Compile of Implementation.v was successful.
+# Compile of RiscV.v was successful.
+# Compile of RiscV_TB.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.RiscV_TB
+# vsim -gui work.RiscV_TB 
+# Start time: 13:31:30 on May 19,2026
+# Loading work.RiscV_TB
+# Loading work.RiscV
+# Loading work.ProgramCounter
+# Loading work.InstructionMemory
+# Loading work.SimpleALU
+# Loading work.RegisterFile
+# Loading work.ImmediateExtention
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.ControlUnit
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/RiscV_TB/clk
+add wave -position end  sim:/RiscV_TB/rst
+add wave -position end  sim:/RiscV_TB/Res
+run -all
+quit -sim
+# End time: 13:34:55 on May 19,2026, Elapsed time: 0:03:25
+# Errors: 0, Warnings: 7
+# Compile of Implementation.v was successful.
+# Compile of RiscV.v was successful.
+# Compile of RiscV_TB.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.RiscV_TB
+# vsim -gui work.RiscV_TB 
+# Start time: 13:36:20 on May 19,2026
+# Loading work.RiscV_TB
+# Loading work.RiscV
+# Loading work.ProgramCounter
+# Loading work.InstructionMemory
+# Loading work.SimpleALU
+# Loading work.RegisterFile
+# Loading work.ImmediateExtention
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.ControlUnit
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/RiscV_TB/clk
+add wave -position end  sim:/RiscV_TB/rst
+add wave -position end  sim:/RiscV_TB/Res
+run -all
+quit -sim
+# End time: 13:43:58 on May 19,2026, Elapsed time: 0:07:38
+# Errors: 0, Warnings: 2
+# Compile of Implementation.v was successful.
+# Compile of RiscV.v was successful.
+# Compile of RiscV_TB.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.RiscV_TB
+# vsim -gui work.RiscV_TB 
+# Start time: 13:44:54 on May 19,2026
+# Loading work.RiscV_TB
+# Loading work.RiscV
+# Loading work.ProgramCounter
+# Loading work.InstructionMemory
+# Loading work.SimpleALU
+# Loading work.RegisterFile
+# Loading work.ImmediateExtention
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.ControlUnit
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/RiscV_TB/clk
+add wave -position end  sim:/RiscV_TB/rst
+add wave -position end  sim:/RiscV_TB/Res
+run -all
+quit -sim
+# End time: 13:49:07 on May 19,2026, Elapsed time: 0:04:13
+# Errors: 0, Warnings: 2
+# Compile of Implementation.v was successful.
+# Compile of RiscV.v was successful.
+# Compile of RiscV_TB.v was successful.
+# 3 compiles, 0 failed with no errors.
+# Compile of Implementation.v was successful.
+# Compile of RiscV.v was successful.
+# Compile of RiscV_TB.v was successful.
+# 3 compiles, 0 failed with no errors.

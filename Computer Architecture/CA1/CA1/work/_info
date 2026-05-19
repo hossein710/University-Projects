@@ -1,0 +1,275 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+vALU
+Z0 !s110 1779186831
+!i10b 1
+!s100 OV>RDoHHAE;Pm`znlNQgT2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IzAezG]@:7b<JkM>IF^CL41
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/Hi-Tek/Desktop/CA1/CA1
+Z4 w1779186823
+Z5 8C:\Users\Hi-Tek\Desktop\CA1\CA1\Implementation.v
+Z6 FC:\Users\Hi-Tek\Desktop\CA1\CA1\Implementation.v
+!i122 66
+L0 98 21
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1779186831.000000
+Z9 !s107 C:\Users\Hi-Tek\Desktop\CA1\CA1\Implementation.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Hi-Tek\Desktop\CA1\CA1\Implementation.v|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+n@a@l@u
+vControlUnit
+R0
+!i10b 1
+!s100 ja@Q<D2U6]LbVc`zWK2Cb0
+R1
+InM_FPF]QHXzS:=>4iEA2`2
+R2
+R3
+R4
+R5
+R6
+!i122 66
+L0 171 104
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@control@unit
+vDataMemory
+R0
+!i10b 1
+!s100 kz:f]FPcf622eeTH1Hg3n3
+R1
+Idc2fHZ;^4WEkE;M<QJbXH2
+R2
+R3
+R4
+R5
+R6
+!i122 66
+L0 121 31
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@data@memory
+vImmediateExtention
+R0
+!i10b 1
+!s100 2H2QXA9jCNm@k5cRZI5@<2
+R1
+ID2_P[KKJB1H9oEh_`U6>D0
+R2
+R3
+R4
+R5
+R6
+!i122 66
+L0 154 15
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@immediate@extention
+vInstructionMemory
+R0
+!i10b 1
+!s100 ECRNWFYYWOD`O?d>SaO`R0
+R1
+IRCAj20gR`_W`e`:_YRHP_2
+R2
+R3
+R4
+R5
+R6
+!i122 66
+L0 18 47
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@instruction@memory
+vProgramCounter
+R0
+!i10b 1
+!s100 V=BDROi]3iLh5zGKK=GaR1
+R1
+IPebfoRibh:@Ul;j<2n<I?0
+R2
+R3
+R4
+R5
+R6
+!i122 66
+Z13 L0 4 12
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@program@counter
+vRegisterFile
+R0
+!i10b 1
+!s100 ad6n7;d_bb^?hkU0CYea81
+R1
+I;1_?LXEE;LbTkeLf;PHY<2
+R2
+R3
+R4
+R5
+R6
+!i122 66
+L0 67 22
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@register@file
+vRiscV
+R0
+!i10b 1
+!s100 fzMg@aDH<9KVHdGUJ;gje0
+R1
+I2jmUIU:Cn`WjTooQA9C970
+R2
+R3
+w1779186765
+8C:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV.v
+FC:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV.v
+!i122 67
+L0 4 109
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV.v|
+!i113 1
+R11
+R12
+n@risc@v
+vRiscV_TB
+!s110 1779186832
+!i10b 1
+!s100 kbO[HlJ<A=mN?Xde>7l@e2
+R1
+IN[H`iff>e5ZSad44bUUHO1
+R2
+R3
+w1779186743
+8C:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV_TB.v
+FC:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV_TB.v
+!i122 68
+R13
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV_TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV_TB.v|
+!i113 1
+R11
+R12
+n@risc@v_@t@b
+vSimpleALU
+R0
+!i10b 1
+!s100 b<ad:R2z2<^JMR^MaFm9b2
+R1
+I^@IhFPl6HO8@Hc9mU:2`@0
+R2
+R3
+R4
+R5
+R6
+!i122 66
+L0 91 5
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@simple@a@l@u
+vXor
+!s110 1778964888
+!i10b 1
+!s100 3:aXnb8oJU9oMkA2FF`Lz1
+R1
+I0Ke]4;P9leS@;RNImDbNP2
+R2
+dC:/Users/Hi-Tek/Desktop/CA1
+w1778964880
+8C:/Users/Hi-Tek/Desktop/CA1/Implementation.v
+FC:/Users/Hi-Tek/Desktop/CA1/Implementation.v
+!i122 22
+L0 78 6
+R7
+r1
+!s85 0
+31
+!s108 1778964888.000000
+!s107 C:/Users/Hi-Tek/Desktop/CA1/Implementation.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Hi-Tek/Desktop/CA1/Implementation.v|
+!i113 1
+R11
+R12
+n@xor

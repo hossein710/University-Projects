@@ -1,0 +1,71 @@
+C:/Users/Hi-Tek/Desktop/CA1/CA1/Implementation.v {1 {vlog -work work -stats=none {C:\Users\Hi-Tek\Desktop\CA1\CA1\Implementation.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ProgramCounter
+-- Compiling module InstructionMemory
+-- Compiling module RegisterFile
+-- Compiling module SimpleALU
+-- Compiling module ALU
+-- Compiling module DataMemory
+-- Compiling module ImmediateExtention
+-- Compiling module ControlUnit
+
+Top level modules:
+	ProgramCounter
+	InstructionMemory
+	RegisterFile
+	SimpleALU
+	ALU
+	DataMemory
+	ImmediateExtention
+	ControlUnit
+
+} {} {}} C:/Users/Hi-Tek/Desktop/CA1/Implementation.v {1 {vlog -work work -stats=none C:/Users/Hi-Tek/Desktop/CA1/Implementation.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ProgramCounter
+-- Compiling module InstructionMemory
+-- Compiling module RegisterFile
+-- Compiling module ALU
+-- Compiling module SimpleALU
+-- Compiling module DataMemory
+-- Compiling module ImmediateExtention
+-- Compiling module ControlUnit
+
+Top level modules:
+	ProgramCounter
+	InstructionMemory
+	RegisterFile
+	ALU
+	SimpleALU
+	DataMemory
+	ImmediateExtention
+	ControlUnit
+
+} {} {}} C:/Users/Hi-Tek/Desktop/CA1/CA1/RiscV.v {1 {vlog -work work -stats=none {C:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RiscV
+
+Top level modules:
+	RiscV
+
+} {} {}} C:/Users/Hi-Tek/Desktop/CA1/RiscV.v {1 {vlog -work work -stats=none C:/Users/Hi-Tek/Desktop/CA1/RiscV.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RiscV
+
+Top level modules:
+	RiscV
+
+} {} {}} C:/Users/Hi-Tek/Desktop/CA1/CA1/RiscV_TB.v {1 {vlog -work work -stats=none {C:\Users\Hi-Tek\Desktop\CA1\CA1\RiscV_TB.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RiscV_TB
+
+Top level modules:
+	RiscV_TB
+
+} {} {}} C:/Users/Hi-Tek/Desktop/CA1/RiscV_TB.v {1 {vlog -work work -stats=none C:/Users/Hi-Tek/Desktop/CA1/RiscV_TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RiscV_TB
+
+Top level modules:
+	RiscV_TB
+
+} {} {}}
