@@ -1,0 +1,203 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Hi-Tek/Desktop/AP/University-Projects/Computer Architecture/CA1/work
+vALU
+Z0 !s110 1780258370
+!i10b 1
+!s100 hA;7NkIXXTY^S^AQz8hC@1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IXSC7;I0E:JRn6fznWh:eY3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Users/Hi-Tek/Desktop/CA2
+Z4 w1780258334
+Z5 8C:/Users/Hi-Tek/Desktop/CA2/Implementation.v
+Z6 FC:/Users/Hi-Tek/Desktop/CA2/Implementation.v
+!i122 30
+L0 115 21
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1780258370.000000
+Z9 !s107 C:/Users/Hi-Tek/Desktop/CA2/Implementation.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Hi-Tek/Desktop/CA2/Implementation.v|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+n@a@l@u
+vControlUnit
+R0
+!i10b 1
+!s100 `E:``QNNE[6Z5jcM;d1gd0
+R1
+I9HU<o>k3Pl;[93RmWS_O50
+R2
+R3
+R4
+R5
+R6
+!i122 30
+L0 154 231
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@control@unit
+vImmediateExtention
+R0
+!i10b 1
+!s100 =BEcQ<BTcaL2>T6hUmb232
+R1
+ILoOMPfFHL;;ze2n4d32P31
+R2
+R3
+R4
+R5
+R6
+!i122 30
+L0 138 15
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@immediate@extention
+vMemory
+R0
+!i10b 1
+!s100 kGHGnfhL:lkHJEX19l8b11
+R1
+IMUL?[^_do2DjUh>XO>9eB1
+R2
+R3
+R4
+R5
+R6
+!i122 30
+L0 18 71
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@memory
+vRegister
+R0
+!i10b 1
+!s100 eibHADLdnIR7hRU7d_4Tc0
+R1
+Inb1>oI2CNNlV_hcBn9ZD[2
+R2
+R3
+R4
+R5
+R6
+!i122 30
+L0 5 12
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@register
+vRegisterFile
+R0
+!i10b 1
+!s100 4iPR32II?@md=g=U_XNOV1
+R1
+Ib;UnBcjfSz^TRb9;@Fo;m0
+R2
+R3
+R4
+R5
+R6
+!i122 30
+L0 91 22
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+n@register@file
+vRiscV
+R0
+!i10b 1
+!s100 lhoc>6D1iS6HN^am0Ygn^1
+R1
+IDO[ICGl9`[O]I9`@`>3TU0
+R2
+R3
+w1780257898
+8C:/Users/Hi-Tek/Desktop/CA2/RiscV.v
+FC:/Users/Hi-Tek/Desktop/CA2/RiscV.v
+!i122 31
+L0 4 157
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Hi-Tek/Desktop/CA2/RiscV.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Hi-Tek/Desktop/CA2/RiscV.v|
+!i113 1
+R11
+R12
+n@risc@v
+vRiscV_TB
+R0
+!i10b 1
+!s100 kbO[HlJ<A=mN?Xde>7l@e2
+R1
+Id^VC@9a34M8en?D22>>3_3
+R2
+R3
+w1780250196
+8C:/Users/Hi-Tek/Desktop/CA2/RiscV_TB.v
+FC:/Users/Hi-Tek/Desktop/CA2/RiscV_TB.v
+!i122 32
+L0 4 12
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/Users/Hi-Tek/Desktop/CA2/RiscV_TB.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Hi-Tek/Desktop/CA2/RiscV_TB.v|
+!i113 1
+R11
+R12
+n@risc@v_@t@b
