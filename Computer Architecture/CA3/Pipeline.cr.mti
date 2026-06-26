@@ -1,0 +1,40 @@
+C:/Users/Hi-Tek/Desktop/CA3/RiscV.v {1 {vlog -work work -stats=none C:/Users/Hi-Tek/Desktop/CA3/RiscV.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RiscV
+
+Top level modules:
+	RiscV
+
+} {} {}} C:/Users/Hi-Tek/Desktop/CA3/RiscV_TB.v {1 {vlog -work work -stats=none C:/Users/Hi-Tek/Desktop/CA3/RiscV_TB.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RiscV_TB
+
+Top level modules:
+	RiscV_TB
+
+} {} {}} C:/Users/Hi-Tek/Desktop/CA3/Implementation.v {1 {vlog -work work -stats=none C:/Users/Hi-Tek/Desktop/CA3/Implementation.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ProgramCounter
+-- Compiling module PipeReg
+-- Compiling module InstructionMemory
+-- Compiling module RegisterFile
+-- Compiling module SimpleALU
+-- Compiling module ALU
+-- Compiling module DataMemory
+-- Compiling module ImmediateExtention
+-- Compiling module ControlUnit
+-- Compiling module HazardDetectionUnit
+
+Top level modules:
+	ProgramCounter
+	PipeReg
+	InstructionMemory
+	RegisterFile
+	SimpleALU
+	ALU
+	DataMemory
+	ImmediateExtention
+	ControlUnit
+	HazardDetectionUnit
+
+} {} {}}

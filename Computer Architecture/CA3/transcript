@@ -1,0 +1,28 @@
+# Compile of Implementation.v was successful.
+# Compile of RiscV.v was successful.
+# Compile of RiscV_TB.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.RiscV_TB
+# vsim -gui work.RiscV_TB 
+# Start time: 13:12:28 on Jun 21,2026
+# Loading work.RiscV_TB
+# Loading work.RiscV
+# Loading work.ProgramCounter
+# Loading work.InstructionMemory
+# Loading work.SimpleALU
+# Loading work.PipeReg
+# Loading work.ControlUnit
+# Loading work.RegisterFile
+# Loading work.ImmediateExtention
+# Loading work.ALU
+# Loading work.DataMemory
+# Loading work.HazardDetectionUnit
+# WARNING: No extended dataflow license exists
+add wave -position end  sim:/RiscV_TB/clk
+add wave -position end  sim:/RiscV_TB/rst
+add wave -position end  sim:/RiscV_TB/Res
+# Load canceled
+run -all
+quit -sim
+# End time: 13:15:21 on Jun 21,2026, Elapsed time: 0:02:53
+# Errors: 0, Warnings: 2
